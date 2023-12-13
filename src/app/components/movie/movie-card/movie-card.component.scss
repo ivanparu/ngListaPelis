@@ -1,0 +1,55 @@
+.movie-card {
+    margin: 1em;
+    min-width: 290px;
+    max-height: 600px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+img {
+    width: 300px;
+    height: 415px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    margin: 0 0.5em;
+}
+
+mat-card-title {
+    max-width: 12em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: beige;
+}
+
+mat-card-header {
+    padding-top: 0;
+}
+
+mat-card-content {
+    padding: 0 8px 0 8px;
+}
+
+mat-card-subtitle {
+    min-width: 290px;
+    font-size: 16px;
+
+}
+
+.rating-icon {
+    font-size: 14px;
+}
+
+mat-icon {
+    height: 14px;
+    width: 14px;
+}
+
+.subtitle-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+img, mat-card-content, mat-card-header {
+    cursor: pointer;
+}

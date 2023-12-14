@@ -4,6 +4,7 @@ import { MovieService } from '../../../services/movie/movie.service';
 import { Movie } from '../../../interfaces/movie.interface';
 import { MatIconModule } from '@angular/material/icon';
 import { MovieGenreComponent } from '../movie-genre/movie-genre.component';
+import { Router } from '@angular/router';
 
 
 
@@ -19,12 +20,12 @@ export class MovieCardComponent implements OnInit {
   movies = signal<Movie[]>([]);
 
   constructor(
-    private movieService: MovieService) {}
+    private movieService: MovieService, 
+    private router: Router) {}
 
 ngOnInit(): void {
   this.movieService.getMovies().subscribe({
     next: (movies) => {
-      console.log(movies)
       this.movies.set(movies);
     },
     error: (error) => {
@@ -33,4 +34,8 @@ ngOnInit(): void {
     },
   });
 }
+  redirectDetail(id: number){
+  this.router.navigate(['/details', id]);
+}
+
 }

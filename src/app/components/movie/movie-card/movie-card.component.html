@@ -1,7 +1,7 @@
 <div class="parent">
     @for(movie of movies(); track movie.id){
     <mat-card class="movie-card">
-        <mat-card-header>
+        <mat-card-header (click)="redirectDetail(movie.id)">
             <mat-card-title>{{ movie.title }}</mat-card-title>
             <mat-card-subtitle>
                 <div class="subtitle-content">
@@ -14,9 +14,9 @@
                 </div>
             </mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="assets/resources/{{ movie.title.split(':')[0] }}.png" alt="{{ movie.title }}">
-        <mat-card-content>
-            <app-movie-genre [genres]="movie.genres"></app-movie-genre>
+        <img (click)="redirectDetail(movie.id)" src="assets/resources/{{ movie.title.split(':')[0] }}.png" alt="{{ movie.title }}">
+        <mat-card-content >
+            <app-movie-genre (click)="redirectDetail(movie.id)" [genres]="movie.genres"></app-movie-genre>
         </mat-card-content>
         <mat-card-actions>
         </mat-card-actions>
